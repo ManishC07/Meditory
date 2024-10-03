@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Custom styles -->
+    <style>
+        /* Fullscreen background video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure the video is behind everything */
+        }
+
+        /* Gradient overlay for text readability */
+        .content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        /* Content styling */
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        /* Heading styling */
+        .content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+        }
+
+        /* Subtitle styling */
+        .content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+        }
+
+        /* Button styling */
+        .content .btn {
+            font-size: 1.25rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .content .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .content .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        /* Navbar styling */
+        .navbar {
+            position: relative;
+            z-index: 10; /* Ensure navbar is above the video and overlay */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Meditory</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sitemap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Video and overlay container -->
+    <div class="video-container">
+        <!-- Background Video -->
+        <video class="bg-video" autoplay muted loop>
+            <source src="/Background (1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Content overlay on video -->
+        <div class="content-overlay"></div>
+
+        <!-- Text and button content -->
+        <div class="content">
+            <div>
+                <h1>Meditory</h1>
+                <p>Manage all your Medical Inventory at one place..</p>
+                <a href="/dashboard" class="btn btn-primary">Continue</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

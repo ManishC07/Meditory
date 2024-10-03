@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Medicine</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fullscreen background image */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/edit.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -1; /* Ensure image is behind content */
+        }
+
+        /* Flex container to center content */
+        .full-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
+            position: relative;
+        }
+
+        /* Content container */
+        .content-container {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            color: white;
+            border-radius: 8px;
+            max-width: 800px; /* Optional: Set max width for content box */
+            width: 100%; /* Responsive width */
+        }
+    </style>
+</head>
+<body>
+    <!-- Fullscreen Flex Container -->
+    <div class="full-screen">
+        <!-- Background Image -->
+        <div class="bg-image"></div>
+
+        <!-- Content -->
+        <div class="content-container">
+            <h1 class="mb-4">Edit Medicine</h1>
+            <form action="/meds/edit/{{mid}}" method="POST">
+                <div class="form-group">
+                    <label for="name">Medicine Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{name}}" placeholder="Medicine name" required>
+                </div>
+                <div class="form-group">
+                    <label for="count">Count</label>
+                    <input type="text" class="form-control" id="count" name="count" value="{{count}}" placeholder="Count" required>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input type="text" class="form-control" id="brand" name="brand" value="{{brand}}" placeholder="Brand" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+            <a href="/meds" class="btn btn-secondary mt-3">Back to Meds List</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
